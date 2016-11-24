@@ -12,11 +12,22 @@ class crm : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit crm(QWidget *parent = 0);
-    ~crm();
+    explicit crm(QWidget *parent = nullptr);
+    virtual ~crm();
 
 private:
-    Ui::crm *ui;
+	void init();
+	void createMenu();
+
+private:
+    void readSettings();
+    void writeSettings();
+    void clearSettings();
+    void closeEvent(QCloseEvent *event);
+
+private:
+    Ui::crm*    ui;
+	bool        m_clearFlag;
 };
 
 #endif // CRM_H
