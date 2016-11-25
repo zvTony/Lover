@@ -1,7 +1,7 @@
 #include <QMenuBar>
 #include "ui_crm.h"
 #include "crm.h"
-#include "menu.h"
+#include "lv_menu.h"
 
 void crm::createMenu()
 {
@@ -14,7 +14,7 @@ void crm::createMenu()
 	connect(exitAction, SIGNAL(triggered(bool)), menu, SLOT(onExit(bool)));
 }
 
-Menu::Menu(QObject* parent)
+Menu::Menu(QObject* parent) : QObject(parent)
 {
 
 }

@@ -45,23 +45,23 @@
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
-    <Filter Include="Header Files\view">
-      <UniqueIdentifier>{d1699613-ff92-4b7a-8ccd-4c77faf3c4f4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\view">
       <UniqueIdentifier>{7a6ff5a3-9ac6-4041-bf38-5d6e46964908}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\model">
-      <UniqueIdentifier>{7dbef6eb-d46a-45c8-b4bf-ecee994a4a43}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\item">
-      <UniqueIdentifier>{9a540ddd-7515-4ebe-81fc-062c43a0f7f4}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\model">
       <UniqueIdentifier>{bb075ee5-c90f-467e-8363-2b98f0ffa43d}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\item">
       <UniqueIdentifier>{e23c9927-afca-484c-b6a6-91d6f7621c41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\lv_model">
+      <UniqueIdentifier>{7dbef6eb-d46a-45c8-b4bf-ecee994a4a43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\lv_view">
+      <UniqueIdentifier>{d1699613-ff92-4b7a-8ccd-4c77faf3c4f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\lv_item">
+      <UniqueIdentifier>{9a540ddd-7515-4ebe-81fc-062c43a0f7f4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -77,33 +77,57 @@
     <ClCompile Include="GeneratedFiles\Release\moc_crm.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="menu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="uimanage.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_uimanage.cpp">
+    <ClCompile Include="GeneratedFiles\Debug\moc_lv_menu.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_uimanage.cpp">
+    <ClCompile Include="GeneratedFiles\Release\moc_lv_menu.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_menu.cpp">
+    <ClCompile Include="lv_menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_lv_item.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_menu.cpp">
+    <ClCompile Include="GeneratedFiles\Release\moc_lv_item.cpp">
       <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lv_item\lv_item.cpp">
+      <Filter>Source Files\item</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_lv_model.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_lv_model.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lv_model\lv_model.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_lv_uimanage.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_lv_uimanage.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lv_uimanage.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="crm.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="uimanage.h">
+    <CustomBuild Include="lv_menu.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="menu.h">
+    <CustomBuild Include="..\lv_item\lv_item.h">
+      <Filter>Header Files\lv_item</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\lv_model\lv_model.h">
+      <Filter>Header Files\lv_model</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\lv_uimanage.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
   </ItemGroup>
@@ -115,6 +139,9 @@
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_crm.h">
       <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\header.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

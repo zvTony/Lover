@@ -8,19 +8,19 @@
 #include <QTextBrowser>
 #include <QDateTime>
 #include <QDebug>
-#include "uimanage.h"
+#include "lv_uimanage.h"
 
 const QString LOGFILENAME = "log.txt";
 const int     MAXLOGCOUNT = 1000;
 
-QDockWidget* UIManage::m_pDockFirst = nullptr;
-UIManage::UIManage(QMainWindow* window, QMenuBar* menuBar, QStatusBar* statusBar)
+QDockWidget* LV_UIManage::m_pDockFirst = nullptr;
+LV_UIManage::LV_UIManage(QMainWindow* window, QMenuBar* menuBar, QStatusBar* statusBar)
 	:QWidget(nullptr), m_pMainWin(window), m_pMenuBar(menuBar), m_pStatusBar(statusBar)
 {
 	init();
 }
 
-UIManage::~UIManage()
+LV_UIManage::~LV_UIManage()
 {
 	PTR_DEL(m_pLogView);
 	PTR_DEL(m_pMenuBar);
@@ -28,7 +28,7 @@ UIManage::~UIManage()
 	PTR_DEL(m_pMainWin);
 }
 
-void UIManage::init()
+void LV_UIManage::init()
 {
 	// log view
 	m_pLogView = new QTextBrowser(this);
@@ -37,7 +37,7 @@ void UIManage::init()
 	connect(this, SIGNAL(log(enumLogLevel, const QString&)), this, SLOT(Log(enumLogLevel, const QString&)));
 }
 
-void UIManage::showStatus(const QString& text)
+void LV_UIManage::showStatus(const QString& text)
 {
 	if (m_pStatusBar)
 	{
@@ -45,13 +45,13 @@ void UIManage::showStatus(const QString& text)
 	}
 }
 
-QString UIManage::getInstancePath()
+QString LV_UIManage::getInstancePath()
 {
 	auto binPath = QApplication::applicationDirPath();
 	return binPath;
 }
 
-bool UIManage::addDockView(enumDockPos pos, QWidget* widget, const QString& title, const QIcon& icon)
+bool LV_UIManage::addDockView(enumDockPos pos, QWidget* widget, const QString& title, const QIcon& icon)
 {
 	if (CENTER == pos)
 	{
@@ -92,7 +92,7 @@ bool UIManage::addDockView(enumDockPos pos, QWidget* widget, const QString& titl
 	return true;
 }
 
-void UIManage::Log(enumLogLevel level, const QString& describe)
+void LV_UIManage::Log(enumLogLevel level, const QString& describe)
 {
 	QString LevelArray[] = { "DEBUG", "WARING", "ERROR" };
 

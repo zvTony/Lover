@@ -4,10 +4,10 @@
 #include <QFile>
 #include "crm.h"
 #include "ui_crm.h"
-#include "uimanage.h"
+#include "../lv_uimanage.h"
 
 const QString CRM_SETTINGS = "./settings.ini";
-UIManage* g_pUIManage = nullptr;
+LV_UIManage* g_pUIManage = nullptr;
 
 crm::crm(QWidget *parent) :
     QMainWindow(parent),
@@ -25,7 +25,7 @@ void crm::init()
 
 	createMenu();
 
-	g_pUIManage = new UIManage(this, ui->menuBar, ui->statusBar);
+	g_pUIManage = new LV_UIManage(this, ui->menuBar, ui->statusBar);
 }
 
 crm::~crm()

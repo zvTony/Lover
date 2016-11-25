@@ -1,22 +1,19 @@
-#ifndef UIMANAGE_H
-#define UIMANAGE_H
+#ifndef LV_UIMANAGE_H
+#define LV_UIMANAGE_H
 
-#include <QWidget>
-#include <QIcon>
-
-#define PTR_DEL(T) do { if (T){ delete T; T = nullptr; } break; } while (1);
+#include "../../include/header.h"
 
 class QMenuBar;
 class QStatusBar;
 class QMainWindow;
 class QTextBrowser;
 class QDockWidget;
-class UIManage : public QWidget
+class LV_UIManage : public QWidget
 {
 	Q_OBJECT
 public:
-	UIManage(QMainWindow* window, QMenuBar* menuBar, QStatusBar* statusBar);
-	virtual ~UIManage();
+	LV_UIManage(QMainWindow* window, QMenuBar* menuBar, QStatusBar* statusBar);
+	virtual ~LV_UIManage();
 
 	enum enumDockPos{ LEFT, RIGHT, BOTTOM, CENTER};
 	enum enumLogLevel{ DEBUG = 0, WARING, ERROR };
@@ -48,4 +45,4 @@ private:
 
 	static QDockWidget* m_pDockFirst;
 };
-#endif // !UIMANAGE_H
+#endif // !LV_UIMANAGE_H

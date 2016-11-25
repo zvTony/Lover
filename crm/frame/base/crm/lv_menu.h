@@ -1,5 +1,5 @@
-#ifndef MENU_H
-#define MENU_H
+#ifndef LV_MENU_H
+#define LV_MENU_H
 
 #include <QObject>
 
@@ -16,4 +16,4 @@ public slots:
 
 };
 
-#endif // !MENU_H
+#endif // !LV_MENU_H
