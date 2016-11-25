@@ -13,6 +13,7 @@
 const QString LOGFILENAME = "log.txt";
 const int     MAXLOGCOUNT = 1000;
 
+QDockWidget* UIManage::m_pDockFirst = nullptr;
 UIManage::UIManage(QMainWindow* window, QMenuBar* menuBar, QStatusBar* statusBar)
 	:QWidget(nullptr), m_pMainWin(window), m_pMenuBar(menuBar), m_pStatusBar(statusBar)
 {
@@ -52,29 +53,41 @@ QString UIManage::getInstancePath()
 
 bool UIManage::addDockView(enumDockPos pos, QWidget* widget, const QString& title, const QIcon& icon)
 {
-	if (LEFT == pos)
-	{
-
-	}
-	else if (RIGHT == pos)
-	{
-
-	}
-	else if (BOTTOM == pos)
-	{
-		QDockWidget* dockWidget = new QDockWidget();
-		dockWidget->setWidget(widget);
-		dockWidget->setWindowTitle(title);
-		dockWidget->setWindowIcon(icon);
-		m_pMainWin->addDockWidget(Qt::BottomDockWidgetArea, dockWidget);
-	}
-	else if (CENTER == pos)
+	if (CENTER == pos)
 	{
 
 	}
 	else
 	{
-		return false;
+		QDockWidget* dockWidget = new QDockWidget();
+		dockWidget->setWidget(widget);
+		dockWidget->setWindowTitle(title);
+		dockWidget->setWindowIcon(icon);
+		if (LEFT == pos)
+		{
+			if (!m_pDockFirst)
+			{
+				m_pMainWin->addDockWidget(Qt::LeftDockWidgetArea, dockWidget);
+				m_pDockFirst = dockWidget;
+			}
+			else
+			{
+				m_pMainWin->tabifyDockWidget(m_pDockFirst, dockWidget);
+			}
+			
+		}
+		else if (RIGHT == pos)
+		{
+			m_pMainWin->addDockWidget(Qt::RightDockWidgetArea, dockWidget);
+		}
+		else if (BOTTOM == pos)
+		{
+			m_pMainWin->addDockWidget(Qt::BottomDockWidgetArea, dockWidget);
+		}
+		else
+		{
+			return false;
+		}
 	}
 	return true;
 }

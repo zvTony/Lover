@@ -10,6 +10,7 @@ class QMenuBar;
 class QStatusBar;
 class QMainWindow;
 class QTextBrowser;
+class QDockWidget;
 class UIManage : public QWidget
 {
 	Q_OBJECT
@@ -44,5 +45,7 @@ private:
 	QStatusBar*     m_pStatusBar;
 
 	QTextBrowser*   m_pLogView;
+
+	static QDockWidget* m_pDockFirst;
 };
 #endif // !UIMANAGE_H

@@ -89,12 +89,21 @@
     <ClCompile Include="GeneratedFiles\Release\moc_uimanage.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_menu.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_menu.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="crm.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="uimanage.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="menu.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
   </ItemGroup>
