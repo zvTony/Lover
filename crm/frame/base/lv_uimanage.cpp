@@ -51,6 +51,15 @@ QString LV_UIManage::getInstancePath()
 	return binPath;
 }
 
+bool LV_UIManage::addLeftTree(QAbstractItemModel* model)
+{
+	auto view = new LV_BaseView();
+	view->createView(LV_BaseView::TREE_VIEW, model);
+
+	addDockView(LEFT, view, QString(), QIcon());
+	return true;
+}
+
 bool LV_UIManage::addDockView(enumDockPos pos, QWidget* widget, const QString& title, const QIcon& icon)
 {
 	if (CENTER == pos)

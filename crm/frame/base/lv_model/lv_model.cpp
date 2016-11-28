@@ -49,7 +49,12 @@ QModelIndex LV_Model::parent(const QModelIndex &index) const
 int LV_Model::rowCount(const QModelIndex &parent) const
 {
 	auto item = getItem(parent);
-	return item->rowCount();
+	if (item)
+	{
+		item->loadChild();
+		return item->rowCount();
+	}
+	return 0;
 }
 int LV_Model::columnCount(const QModelIndex &parent) const
 {

@@ -63,6 +63,12 @@
     <Filter Include="Header Files\lv_item">
       <UniqueIdentifier>{9a540ddd-7515-4ebe-81fc-062c43a0f7f4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\lv_item\lvitem_customer">
+      <UniqueIdentifier>{8ea7c554-9dcd-4136-8e6b-0c838249c4d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\item\lvitem_customer">
+      <UniqueIdentifier>{210b3e1c-a11f-4fcf-bad8-62a9e2ea764e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="crm.cpp">
@@ -113,6 +119,15 @@
     <ClCompile Include="..\lv_uimanage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\lv_item\lvitem_customer\lvitem_customer.cpp">
+      <Filter>Source Files\item\lvitem_customer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lv_view\lv_baseView.cpp">
+      <Filter>Source Files\view</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lv_model\lv_proxyModel.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="crm.h">
@@ -142,6 +157,15 @@
     </ClInclude>
     <ClInclude Include="..\..\..\include\header.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lv_item\lvitem_customer\lvitem_customer.h">
+      <Filter>Header Files\lv_item\lvitem_customer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lv_view\lv_baseView.h">
+      <Filter>Header Files\lv_view</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lv_model\lv_proxyModel.h">
+      <Filter>Header Files\lv_model</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

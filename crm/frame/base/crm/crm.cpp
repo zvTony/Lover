@@ -6,6 +6,10 @@
 #include "ui_crm.h"
 #include "../lv_uimanage.h"
 
+#include "../../../include/header.h"
+#include "../lv_model/lv_model.h"
+#include "../lv_item/lvitem_customer/lvitem_customer.h"
+
 const QString CRM_SETTINGS = "./settings.ini";
 LV_UIManage* g_pUIManage = nullptr;
 
@@ -26,6 +30,11 @@ void crm::init()
 	createMenu();
 
 	g_pUIManage = new LV_UIManage(this, ui->menuBar, ui->statusBar);
+
+	auto item = new LvItem_Customer();
+	item->loadChild("");
+	auto model = new LV_Model(item);
+	g_pUIManage->addLeftTree(model);
 }
 
 crm::~crm()

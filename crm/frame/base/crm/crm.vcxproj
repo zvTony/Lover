@@ -136,9 +136,12 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\lv_item\lvitem_customer\lvitem_customer.cpp" />
     <ClCompile Include="..\lv_item\lv_item.cpp" />
     <ClCompile Include="..\lv_model\lv_model.cpp" />
+    <ClCompile Include="..\lv_model\lv_proxyModel.cpp" />
     <ClCompile Include="..\lv_uimanage.cpp" />
+    <ClCompile Include="..\lv_view\lv_baseView.cpp" />
     <ClCompile Include="crm.cpp" />
     <ClCompile Include="GeneratedFiles\Debug\moc_crm.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
@@ -230,6 +233,9 @@
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG "-I." "-I$(QTDIR)\include" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtANGLE" "-I$(QTDIR)\include\QtCore" "-I.\release" "-I$(QTDIR)\mkspecs\win32-msvc2013" "-I.\GeneratedFiles"</Command>
     </CustomBuild>
     <ClInclude Include="..\..\..\include\header.h" />
+    <ClInclude Include="..\lv_item\lvitem_customer\lvitem_customer.h" />
+    <ClInclude Include="..\lv_model\lv_proxyModel.h" />
+    <ClInclude Include="..\lv_view\lv_baseView.h" />
     <ClInclude Include="GeneratedFiles\ui_crm.h" />
     <CustomBuild Include="lv_menu.h">
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath);$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>

@@ -22,7 +22,7 @@ public:
 	void       showStatus(const QString& text);
 
 public:
-	bool       addDockView(enumDockPos pos, QWidget* widget, const QString& title, const QIcon& icon = QIcon());
+	bool       addLeftTree(QAbstractItemModel* model);
 
 public:
 	QString    getInstancePath();
@@ -35,6 +35,7 @@ signals:
 
 private:
 	void       init();
+	bool       addDockView(enumDockPos pos, QWidget* widget, const QString& title, const QIcon& icon = QIcon());
 
 private:
 	QMainWindow*    m_pMainWin;

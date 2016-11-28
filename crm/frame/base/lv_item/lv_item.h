@@ -10,9 +10,14 @@ public:
 	LV_Item(QObject* parent = nullptr);
 	virtual ~LV_Item();
 
-	int      rowCount();
-	LV_Item* child(int index);
-	QString  get_name(int index = 0)    { return QString(); }
+	virtual int      rowCount();
+	virtual LV_Item* child(int index);
+	virtual void     addChild(LV_Item* item)    { if (m_pChild) m_pChild->append(item); }
+	virtual QString  get_name(int index = 0)    { return QString(); }
+	virtual QIcon    get_icon(int column = 0)   { return QIcon(); }
+
+	virtual bool     loadChild(const QString& viewName)  { return false; }
+	virtual bool     loadChild()                         { return false; }
 private:
 	QList<LV_Item*>*    m_pChild;
 
