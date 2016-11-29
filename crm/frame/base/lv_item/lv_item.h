@@ -15,7 +15,7 @@ public:
 	virtual void     addChild(LV_Item* item)    { if (m_pChild) m_pChild->append(item); }
 	virtual QString  get_name(int index = 0)    { return QString(); }
 	virtual QIcon    get_icon(int column = 0)   { return QIcon(); }
-
+	virtual QString  get_title()                { return QString(); }
 	virtual bool     loadChild(const QString& viewName)  { return false; }
 	virtual bool     loadChild()                         { return false; }
 private:

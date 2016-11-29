@@ -1,14 +1,13 @@
 #ifndef LV_PROXYMODEL_H
 #define LV_PROXYMODEL_H
 
-#include <QAbstractProxyModel> 
+#include <QSortFilterProxyModel>
 
-class LV_ProxyModel : public QAbstractProxyModel
+class LV_ProxyModel : public QSortFilterProxyModel
 {
 public:
-	LV_ProxyModel(QAbstractProxyModel* parent);
+	LV_ProxyModel(QSortFilterProxyModel* parent = nullptr);
 	virtual ~LV_ProxyModel();
-
 
 public:
 

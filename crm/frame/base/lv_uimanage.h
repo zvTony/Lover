@@ -22,7 +22,7 @@ public:
 	void       showStatus(const QString& text);
 
 public:
-	bool       addLeftTree(QAbstractItemModel* model);
+	bool       addLeftTree(LV_Item* item);
 
 public:
 	QString    getInstancePath();
@@ -43,6 +43,7 @@ private:
 	QStatusBar*     m_pStatusBar;
 
 	QTextBrowser*   m_pLogView;
+	QTabWidget*     m_pTabWidget;
 
 	static QDockWidget* m_pDockFirst;
 };

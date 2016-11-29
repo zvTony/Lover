@@ -136,6 +136,9 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\third\sqlite3\shell.c" />
+    <ClCompile Include="..\..\..\third\sqlite3\sqlite3.c" />
+    <ClCompile Include="..\lv_db\lv_db.cpp" />
     <ClCompile Include="..\lv_item\lvitem_customer\lvitem_customer.cpp" />
     <ClCompile Include="..\lv_item\lv_item.cpp" />
     <ClCompile Include="..\lv_model\lv_model.cpp" />
@@ -233,6 +236,9 @@
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG "-I." "-I$(QTDIR)\include" "-I$(QTDIR)\include\QtWidgets" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtANGLE" "-I$(QTDIR)\include\QtCore" "-I.\release" "-I$(QTDIR)\mkspecs\win32-msvc2013" "-I.\GeneratedFiles"</Command>
     </CustomBuild>
     <ClInclude Include="..\..\..\include\header.h" />
+    <ClInclude Include="..\..\..\third\sqlite3\sqlite3.h" />
+    <ClInclude Include="..\..\..\third\sqlite3\sqlite3ext.h" />
+    <ClInclude Include="..\lv_db\lv_db.h" />
     <ClInclude Include="..\lv_item\lvitem_customer\lvitem_customer.h" />
     <ClInclude Include="..\lv_model\lv_proxyModel.h" />
     <ClInclude Include="..\lv_view\lv_baseView.h" />

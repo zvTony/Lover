@@ -45,15 +45,6 @@
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
-    <Filter Include="Source Files\view">
-      <UniqueIdentifier>{7a6ff5a3-9ac6-4041-bf38-5d6e46964908}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\model">
-      <UniqueIdentifier>{bb075ee5-c90f-467e-8363-2b98f0ffa43d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\item">
-      <UniqueIdentifier>{e23c9927-afca-484c-b6a6-91d6f7621c41}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\lv_model">
       <UniqueIdentifier>{7dbef6eb-d46a-45c8-b4bf-ecee994a4a43}</UniqueIdentifier>
     </Filter>
@@ -66,8 +57,23 @@
     <Filter Include="Header Files\lv_item\lvitem_customer">
       <UniqueIdentifier>{8ea7c554-9dcd-4136-8e6b-0c838249c4d9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\item\lvitem_customer">
+    <Filter Include="Header Files\lv_db">
+      <UniqueIdentifier>{6852ff01-f386-467a-a8f7-762e431657c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\lv_db">
+      <UniqueIdentifier>{d2d6a68f-8d40-44fb-bcc7-4adbf1e58d15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\lv_model">
+      <UniqueIdentifier>{bb075ee5-c90f-467e-8363-2b98f0ffa43d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\lv_item">
+      <UniqueIdentifier>{e23c9927-afca-484c-b6a6-91d6f7621c41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\lv_item\lvitem_customer">
       <UniqueIdentifier>{210b3e1c-a11f-4fcf-bad8-62a9e2ea764e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\lv_view">
+      <UniqueIdentifier>{7a6ff5a3-9ac6-4041-bf38-5d6e46964908}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -99,7 +105,7 @@
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="..\lv_item\lv_item.cpp">
-      <Filter>Source Files\item</Filter>
+      <Filter>Source Files\lv_item</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_lv_model.cpp">
       <Filter>Generated Files\Debug</Filter>
@@ -108,7 +114,7 @@
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="..\lv_model\lv_model.cpp">
-      <Filter>Source Files\model</Filter>
+      <Filter>Source Files\lv_model</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_lv_uimanage.cpp">
       <Filter>Generated Files\Debug</Filter>
@@ -120,13 +126,22 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\lv_item\lvitem_customer\lvitem_customer.cpp">
-      <Filter>Source Files\item\lvitem_customer</Filter>
+      <Filter>Source Files\lv_item\lvitem_customer</Filter>
     </ClCompile>
     <ClCompile Include="..\lv_view\lv_baseView.cpp">
-      <Filter>Source Files\view</Filter>
+      <Filter>Source Files\lv_view</Filter>
     </ClCompile>
     <ClCompile Include="..\lv_model\lv_proxyModel.cpp">
-      <Filter>Source Files\model</Filter>
+      <Filter>Source Files\lv_model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lv_db\lv_db.cpp">
+      <Filter>Source Files\lv_db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\third\sqlite3\shell.c">
+      <Filter>Source Files\lv_db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\third\sqlite3\sqlite3.c">
+      <Filter>Source Files\lv_db</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +181,15 @@
     </ClInclude>
     <ClInclude Include="..\lv_model\lv_proxyModel.h">
       <Filter>Header Files\lv_model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lv_db\lv_db.h">
+      <Filter>Header Files\lv_db</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\third\sqlite3\sqlite3.h">
+      <Filter>Header Files\lv_db</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\third\sqlite3\sqlite3ext.h">
+      <Filter>Header Files\lv_db</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

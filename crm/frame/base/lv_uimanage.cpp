@@ -9,6 +9,8 @@
 #include <QDateTime>
 #include <QDebug>
 #include "lv_uimanage.h"
+#include "lv_model/lv_model.h"
+#include "lv_item/lv_item.h"
 
 const QString LOGFILENAME = "log.txt";
 const int     MAXLOGCOUNT = 1000;
@@ -22,7 +24,8 @@ LV_UIManage::LV_UIManage(QMainWindow* window, QMenuBar* menuBar, QStatusBar* sta
 
 LV_UIManage::~LV_UIManage()
 {
-	PTR_DEL(m_pLogView);
+	PTR_DEL(m_pTabWidget);    // center tab widget
+	PTR_DEL(m_pLogView);      // log view
 	PTR_DEL(m_pMenuBar);
 	PTR_DEL(m_pStatusBar);
 	PTR_DEL(m_pMainWin);
@@ -33,8 +36,11 @@ void LV_UIManage::init()
 	// log view
 	m_pLogView = new QTextBrowser(this);
 	addDockView(BOTTOM, m_pLogView, "Log View");
-
 	connect(this, SIGNAL(log(enumLogLevel, const QString&)), this, SLOT(Log(enumLogLevel, const QString&)));
+
+	// center view
+	m_pTabWidget = new QTabWidget(this);
+	m_pMainWin->setCentralWidget(m_pTabWidget);
 }
 
 void LV_UIManage::showStatus(const QString& text)
@@ -51,12 +57,17 @@ QString LV_UIManage::getInstancePath()
 	return binPath;
 }
 
-bool LV_UIManage::addLeftTree(QAbstractItemModel* model)
+bool LV_UIManage::addLeftTree(LV_Item* item)
 {
+	if (item == nullptr)
+		return false;
+
+	auto model = new LV_Model(item);
+
 	auto view = new LV_BaseView();
 	view->createView(LV_BaseView::TREE_VIEW, model);
 
-	addDockView(LEFT, view, QString(), QIcon());
+	addDockView(LEFT, view, item->get_title(), QIcon());
 	return true;
 }
 

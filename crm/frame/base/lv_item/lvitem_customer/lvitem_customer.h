@@ -10,6 +10,7 @@ public:
 	virtual ~LvItem_Customer();
 
 	QString  get_name(int index = 0)    { return m_name; }
+	QString  get_title()                { return QStringLiteral("客户信息"); }
 	bool     loadChild(const QString& viewName);
 
 private:

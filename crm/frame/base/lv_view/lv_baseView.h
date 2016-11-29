@@ -21,6 +21,7 @@ public:
 
 public:
 	QAbstractItemView* m_pView;
+	QVBoxLayout*       m_pVLayout;
 	bool               m_headerHide;
 };
 
