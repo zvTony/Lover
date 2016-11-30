@@ -15,6 +15,8 @@
 const QString LOGFILENAME = "log.txt";
 const int     MAXLOGCOUNT = 1000;
 
+LV_DB* g_pDB = nullptr;
+
 QDockWidget* LV_UIManage::m_pDockFirst = nullptr;
 LV_UIManage::LV_UIManage(QMainWindow* window, QMenuBar* menuBar, QStatusBar* statusBar)
 	:QWidget(nullptr), m_pMainWin(window), m_pMenuBar(menuBar), m_pStatusBar(statusBar)
@@ -68,6 +70,20 @@ bool LV_UIManage::addLeftTree(LV_Item* item)
 	view->createView(LV_BaseView::TREE_VIEW, model);
 
 	addDockView(LEFT, view, item->get_title(), QIcon());
+	return true;
+}
+
+bool LV_UIManage::addDBPath(const QString& dbPath, const QString& sqlFilePath)
+{
+	g_pDB = new LV_DB();
+#ifdef NDEBUG    // release
+	g_pDB->open(":memory:");
+#else
+	g_pDB->open(dbPath);
+#endif
+
+	if (!sqlFilePath.isEmpty())
+		g_pDB->exec(sqlFilePath);
 	return true;
 }
 

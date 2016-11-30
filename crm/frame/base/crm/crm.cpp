@@ -30,6 +30,8 @@ void crm::init()
 
 	g_pUIManage = new LV_UIManage(this, ui->menuBar, ui->statusBar);
 
+	g_pUIManage->addDBPath("../../bin/crm.db");
+
 	auto item = new LvItem_Customer();
 	item->loadChild("");
 	g_pUIManage->addLeftTree(item);

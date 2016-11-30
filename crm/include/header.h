@@ -22,6 +22,7 @@ class LV_BaseView;
 #define PTR_DEL(T) do { if (T){ delete T; T = nullptr; } break; } while (1);
 
 #include "../frame/base/lv_view/lv_baseView.h"
-
+#include "../frame/base/lv_db/lv_db.h"
+#include "../frame/base/lv_uimanage.h"
 
 #endif // !HEADER_H

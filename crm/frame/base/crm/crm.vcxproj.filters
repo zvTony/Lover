@@ -137,11 +137,14 @@
     <ClCompile Include="..\lv_db\lv_db.cpp">
       <Filter>Source Files\lv_db</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\third\sqlite3\shell.c">
-      <Filter>Source Files\lv_db</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\third\sqlite3\sqlite3.c">
       <Filter>Source Files\lv_db</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_lv_db.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_lv_db.cpp">
+      <Filter>Generated Files\Release</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -159,6 +162,9 @@
     </CustomBuild>
     <CustomBuild Include="..\lv_uimanage.h">
       <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\lv_db\lv_db.h">
+      <Filter>Header Files\lv_db</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
@@ -182,13 +188,7 @@
     <ClInclude Include="..\lv_model\lv_proxyModel.h">
       <Filter>Header Files\lv_model</Filter>
     </ClInclude>
-    <ClInclude Include="..\lv_db\lv_db.h">
-      <Filter>Header Files\lv_db</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\third\sqlite3\sqlite3.h">
-      <Filter>Header Files\lv_db</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\third\sqlite3\sqlite3ext.h">
       <Filter>Header Files\lv_db</Filter>
     </ClInclude>
   </ItemGroup>

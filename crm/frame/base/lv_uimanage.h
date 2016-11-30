@@ -23,6 +23,7 @@ public:
 
 public:
 	bool       addLeftTree(LV_Item* item);
+	bool       addDBPath(const QString& dbPath, const QString& sqlFilePath = QString());
 
 public:
 	QString    getInstancePath();
