@@ -20,11 +20,12 @@ bool LvItem_Customer::loadChild(const QString& viewName)
 	auto ret = g_pDB->queryArray(sql);
 	if (ret.size() < 1)
 		return false;
-	auto name = ret[0];
-
-	auto item = new LvItem_Customer(this, "test");
-	
-	this->addChild(item);
+	for (int i = 0; i < ret.size(); ++i)
+	{
+		QString name = ret[i];
+		auto item = new LvItem_Customer(this, name);
+		this->addChild(item);
+	}
 
 	return true;
 }

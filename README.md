@@ -5,5 +5,4 @@
 	
 	
 	
-个人QQ  ：497990345
-个人微信：uutiddler
+E-mail:zvtony@163.com

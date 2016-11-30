@@ -16,8 +16,17 @@ public:
 	virtual QString  get_name(int index = 0)    { return QString(); }
 	virtual QIcon    get_icon(int column = 0)   { return QIcon(); }
 	virtual QString  get_title()                { return QString(); }
-	virtual bool     loadChild(const QString& viewName)  { return false; }
-	virtual bool     loadChild()                         { return false; }
+	/*load current data*/
+	virtual bool     loadChild(const QString& viewName)    { return false; }
+	/*load child data*/
+	virtual bool     loadChild()                           { return false; }
+
+	/*
+	*@param type : event type, like CLICK,DOUBLECLIC,
+	*@param index: context menu index,action point
+	*/
+	virtual bool     execute(enumEvent_Type type,int index = 0){ return false; }
+
 private:
 	QList<LV_Item*>*    m_pChild;
 

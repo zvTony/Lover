@@ -25,4 +25,10 @@ class LV_BaseView;
 #include "../frame/base/lv_db/lv_db.h"
 #include "../frame/base/lv_uimanage.h"
 
+enum enumEvent_Type{
+	DOUBLECLICK,
+	CLICK,
+	CONTEXTMENU
+};
+
 #endif // !HEADER_H
