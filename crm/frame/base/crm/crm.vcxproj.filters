@@ -146,6 +146,12 @@
     <ClCompile Include="GeneratedFiles\Release\moc_lv_db.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_lv_baseView.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_lv_baseView.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="crm.h">
@@ -166,6 +172,9 @@
     <CustomBuild Include="..\lv_db\lv_db.h">
       <Filter>Header Files\lv_db</Filter>
     </CustomBuild>
+    <CustomBuild Include="..\lv_view\lv_baseView.h">
+      <Filter>Header Files\lv_view</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="crm.ui">
@@ -181,9 +190,6 @@
     </ClInclude>
     <ClInclude Include="..\lv_item\lvitem_customer\lvitem_customer.h">
       <Filter>Header Files\lv_item\lvitem_customer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\lv_view\lv_baseView.h">
-      <Filter>Header Files\lv_view</Filter>
     </ClInclude>
     <ClInclude Include="..\lv_model\lv_proxyModel.h">
       <Filter>Header Files\lv_model</Filter>

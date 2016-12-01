@@ -5,6 +5,7 @@
 
 class LV_BaseView : public QWidget
 {
+	Q_OBJECT
 public:
 	LV_BaseView(QWidget* parent = nullptr);
 	virtual ~LV_BaseView();

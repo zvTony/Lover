@@ -27,6 +27,8 @@ public:
 	*/
 	virtual bool     execute(enumEvent_Type type,int index = 0){ return false; }
 
+	virtual Qt::ItemFlags flags() const          { return Qt::ItemIsSelectable | Qt::ItemIsEnabled; }
+
 private:
 	QList<LV_Item*>*    m_pChild;
 

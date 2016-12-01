@@ -22,6 +22,8 @@ public:
 	int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
 	int columnCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
 
+	Qt::ItemFlags flags(const QModelIndex &index) const Q_DECL_OVERRIDE;
+
 private:
 	LV_Item* getItem(const QModelIndex& index) const;
 

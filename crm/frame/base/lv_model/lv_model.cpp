@@ -72,3 +72,11 @@ LV_Item* LV_Model::getItem(const QModelIndex& index) const
 	}
 	return m_pItem;
 }
+
+Qt::ItemFlags LV_Model::flags(const QModelIndex &index) const
+{
+	auto item = getItem(index);
+	if (item)
+		return item->flags();
+	return Qt::ItemIsSelectable | Qt::ItemIsEnabled;
+}

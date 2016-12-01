@@ -1,5 +1,6 @@
 #include "lv_baseView.h"
 #include "../lv_model/lv_proxyModel.h"
+#include "../lv_model/lv_model.h"
 #include "../lv_item/lv_item.h"
 
 LV_BaseView::LV_BaseView(QWidget* parent)
@@ -34,6 +35,8 @@ void LV_BaseView::onContenxtMenu(const QModelIndex &index)
 
 LV_Item* LV_BaseView::getItem(const QModelIndex& index)
 {
+	return nullptr;
+
 	if (!index.isValid())
 		return nullptr;
 	
@@ -52,17 +55,20 @@ bool LV_BaseView::createView(enumViewType type, QAbstractItemModel* model)
 		static_cast<QTreeView*>(m_pView)->setModel(proxy);
 		static_cast<QTreeView*>(m_pView)->setHeaderHidden(m_headerHide);
 		static_cast<QTreeView*>(m_pView)->setContextMenuPolicy(Qt::CustomContextMenu);
+		static_cast<QTreeView*>(m_pView)->setExpandsOnDoubleClick(true);
 	}
 	else if (type == TREE_VIEW)
 	{
 		m_pView = new QTableView(this);
 		m_pView->setModel(proxy);
 	}
+
+	m_pView->setAlternatingRowColors(true);
 	m_pVLayout->addWidget(m_pView);
 	m_pVLayout->setContentsMargins(0, 0, 0, 0);
 
 	connect(m_pView, SIGNAL(doubleClicked(const QModelIndex&)), this, SLOT(onDoubleClick(const QModelIndex&)));
-
-
+	connect(m_pView, SIGNAL(clicked(const QModelIndex&)), this, SLOT(onClick(const QModelIndex&)));
+	
 	return true;
 }
